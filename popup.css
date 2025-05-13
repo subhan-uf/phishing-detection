@@ -1,0 +1,86 @@
+/* Variables for easy theming */
+:root {
+  --bg-gradient-start: #1e2149;
+  --bg-gradient-end:   #2b3058;
+  --card-bg:           rgba(255,255,255,0.05);
+  --text-main:         #ffffff;
+  --text-secondary:    #c0c3d2;
+  --shadow:            rgba(0,0,0,0.3);
+
+  --safe-color-start:   #22c55e;
+  --safe-color-end:     #10b981;
+  --warn-color-start:   #f97316;
+  --warn-color-end:     #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 280px;
+  height: 240px;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    /* limit the width so nothing ever spills out */
+    width: 100%;
+    max-width: 232px;        /* 280px body minus 2×24px padding */
+    box-sizing: border-box;  /* include that padding in the width */
+    text-align: center;
+    box-shadow: 0 8px 24px var(--shadow);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-out;
+   }
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  animation: popIn 0.6s ease-out;
+}
+
+#status-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.text-wrapper h2 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  animation: slideUp 0.6s ease;
+}
+
+.text-wrapper p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  animation: slideUp 0.6s ease 0.1s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes popIn {
+  0%   { transform: scale(0); opacity: 0; }
+  60%  { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
