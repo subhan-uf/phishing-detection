@@ -45,4 +45,4 @@ Pull requests are welcome. Feel free to open issues for any bugs or suggestions.
 
 ## License
 
-This project is released under the MIT License.
+This project is made by Subhan
